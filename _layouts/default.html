@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+　　<html>
+　　<head>
+　　　　<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+　　　　<title>{{ page.title }}</title>
+　　</head>
+　　<body>
+
+　　　　{{ content }}
+
+　　</body>
+　　</html>
+xinglu31deMBP:~ xinglu31$ git
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Find by binary search the change that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Forward-port local commits to the updated upstream head
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+xinglu31deMBP:~ xinglu31$ git -version
+Unknown option: -version
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+xinglu31deMBP:~ xinglu31$ git --version
+git version 2.5.4 (Apple Git-61)
+xinglu31deMBP:~ xinglu31$ cd ~/.ssh
+xinglu31deMBP:.ssh xinglu31$ ls
+known_hosts
+xinglu31deMBP:.ssh xinglu31$ cd ~/.ssh
+xinglu31deMBP:.ssh xinglu31$ cd ..
+xinglu31deMBP:~ xinglu31$ cd ~/.ssh
+xinglu31deMBP:.ssh xinglu31$ ls -l
+total 8
+-rw-r--r--  1 xinglu31  staff  411 10 13  2014 known_hosts
+xinglu31deMBP:.ssh xinglu31$ mkdir key_backup
+xinglu31deMBP:.ssh xinglu31$ cp known_hosts key_backup
+xinglu31deMBP:.ssh xinglu31$ ls -l
+total 8
+drwxr-xr-x  3 xinglu31  staff  102  1 16 15:36 key_backup
+-rw-r--r--  1 xinglu31  staff  411 10 13  2014 known_hosts
+xinglu31deMBP:.ssh xinglu31$ cd key_backup
+xinglu31deMBP:key_backup xinglu31$ ls -l
+total 8
+-rw-r--r--  1 xinglu31  staff  411  1 16 15:36 known_hosts
+xinglu31deMBP:key_backup xinglu31$ cd ..
+xinglu31deMBP:.ssh xinglu31$ ls -l
+total 8
+drwxr-xr-x  3 xinglu31  staff  102  1 16 15:36 key_backup
+-rw-r--r--  1 xinglu31  staff  411 10 13  2014 known_hosts
+xinglu31deMBP:.ssh xinglu31$ rm known_hosts
+xinglu31deMBP:.ssh xinglu31$ ls -l
+total 0
+drwxr-xr-x  3 xinglu31  staff  102  1 16 15:36 key_backup
+xinglu31deMBP:.ssh xinglu31$ ssh -keygen -t rsa -C "xinglu31@2980.com"
+Bad escape character 'ygen'.
+xinglu31deMBP:.ssh xinglu31$ ssh-keygen -t rsa -C "xinglu31@2980.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/xinglu31/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/xinglu31/.ssh/id_rsa.
+Your public key has been saved in /Users/xinglu31/.ssh/id_rsa.pub.
+The key fingerprint is:
+68:f1:5f:69:ff:1b:bc:5e:87:96:45:ec:df:c1:0f:1e xinglu31@2980.com
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+|               . |
+|      .         o|
+|       +     ..o |
+|      o S   + Eoo|
+|     .   . o o.*=|
+|          .   *o*|
+|             . .=|
+|              .+o|
++-----------------+
+xinglu31deMBP:.ssh xinglu31$ ls -l
+total 16
+-rw-------  1 xinglu31  staff  1766  1 16 15:40 id_rsa
+-rw-r--r--  1 xinglu31  staff   399  1 16 15:40 id_rsa.pub
+drwxr-xr-x  3 xinglu31  staff   102  1 16 15:36 key_backup
+xinglu31deMBP:.ssh xinglu31$ vi id_rsa.pub
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDG1bBUDWdPiMKTcaPk1Y6PKUbRgHp25VZVkOJ+NlI7f85x/oBl2rU8gzLViG8kzEo+xp9azJV16lRVhcqLXmElMSL6/nidxcpK0FOos04ghRmWm/IbUSdttZTUfX3fCqUDUXVYEMqacxAMgtOpQh57cM5U9T77Tkk6LUPT5EsJYX1N/o+Jt1eQJ+CIE5hP5P2ETRIChp8fE1jdYbKPEaSo7Dltb8Zwf8X4heACTZ+RIzCtfdsAVrhRzgFaFet6MqKTO+4leCMSb4z5HKop2swmt3NU9wLtP76VMCuHPhTHIDZ1fua53OVfucklzO9DNbkpxzV6sfRbljPU/5NKHGUV xinglu31@2980.com
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+"id_rsa.pub" 1L, 399C
+:q
+
